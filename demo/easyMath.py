@@ -11,3 +11,31 @@ def doprob():
   nums.sort(reverse=True)
   ans = ops[op](*nums)
   pr = '%d %s %d='%(nums[0], op, nums[1])
+  oops = 0
+  while True:
+    try:
+      if int(input(pr)) == ans:
+        print('correct')
+        break
+      if oops == MAXTRIES:
+        print('answer\n%s%d'%(pr, ans))
+      else:
+        print('incorrect...try again')
+        oops += 1
+
+    except (KeyboardInterrupt, EOFError, ValueError):
+      print('invalid input... try again')
+
+def main ():
+  while True:
+    doprob()
+    try:
+      opt = input('Again? [y]').lower()
+      print('输入的是%s'%opt)
+      if opt and opt[0] != 'y':
+        break
+    except (KeyboardInterrupt, EOFError):
+      break
+
+if __name__ == '__main__':
+  main()
