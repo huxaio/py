@@ -24,7 +24,7 @@ def writeToTxt(list_name,file_path):
 #def getStr(item):
 #   return json.dumps(item).replace('\'','\"')+',\n'
 def saveBlogs():
-    for i in range(1,2):
+    for i in range(1,10):
         print('request for '+str(i)+'...')
         blogs = match.blogParser(i)
         #保存到文件
